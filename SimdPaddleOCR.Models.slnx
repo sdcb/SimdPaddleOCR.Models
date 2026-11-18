@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Sdcb.SimdPaddleOCR.Models.DocumentOrientation/Sdcb.SimdPaddleOCR.Models.DocumentOrientation.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,38 @@
+<Project>
+  <!--
+    Independent NuGet versions, one per model package. Edit here (and keep build/00-common.linq in sync).
+  -->
+  <PropertyGroup>
+    <SdcbSimdPaddleOCRModelsDocumentOrientationVersion Condition="'$(SdcbSimdPaddleOCRModelsDocumentOrientationVersion)' == ''">1.0.0</SdcbSimdPaddleOCRModelsDocumentOrientationVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>sdcb</Authors>
+    <Company>Sdcb</Company>
+    <PackageProjectUrl>https://github.com/sdcb/SimdPaddleOCR.Models</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sdcb/SimdPaddleOCR.Models.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>Sdcb;AI;OCR;PaddleOCR;SimdPaddleOCR</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryType>git</PublishRepositoryType>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true' or '$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Sdcb.SimdPaddleOCR.Models.DocumentOrientation'">
+    <Version>$(SdcbSimdPaddleOCRModelsDocumentOrientationVersion)</Version>
+    <IsPackable>true</IsPackable>
+    <Description>Embedded PP-LCNet_x1_0_doc_ori four-way page orientation (0/90/180/270) ONNX model for Sdcb.SimdPaddleOCR. netstandard2.0, no dependencies, exposes the model as a Stream.</Description>
+    <PackageTags>Sdcb;AI;OCR;PaddleOCR;SimdPaddleOCR;DocumentOrientation;PP-LCNet</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsPackable)' == 'true'">
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <None Include="$(MSBuildThisFileDirectory)assets\icon.png" Pack="true" PackagePath="icon.png" Visible="false" />
+  </ItemGroup>
+</Project>

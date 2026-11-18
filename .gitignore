@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+*.user
+build/nupkgs/
+build/nuget.exe
+.tmp-artifacts/
+__pycache__/
